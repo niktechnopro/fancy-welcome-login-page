@@ -30,12 +30,11 @@
 			      <button>Sign In</button>
 			      <p class="col-xs-12 text-center">Not registered?<a href="#"> Create an account</a></p>
 			    </form>	
-			    <form class="search-form" method = "post" action="/search">
-			    	<h1>Welcome Guest</h1>
+			    <form class="guest-form" method = "post" action="/search">
+			    	<h1 id = "guest">Welcome Guest</h1>
 			      <input type="text" placeholder="Enter Your Address Or Zip Code"/>
-			      <button>Get Your Search Started</button>
-			      <p>for detailed search please register/login</p>
-			      <div class = "row">
+			      <button>Quick Unregistered Search</button>
+			      <div class = "row guest-2">
 			      	<p class="left col-xs-1 message"><a href="#">Login</a></p>
 			      <p class="right col-xs-offset-5">Not registered?<a href="#"> Create an account</a></p>
 			      
@@ -47,13 +46,15 @@
 	</div>
 </div>
 <div class="col-sm-12 text-center footer">
-	2017 Full Stack School Project: Nicolas, Taylor, Saif, Zach
+	2017 Full Stack School Project Team: Nikolas, Taylor, Saif, Zach
 </div>
 			
 	</div>
 	<script>
     	$('.message a').click(function(){
-   		$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+   		$('form').animate({height: "toggle", opacity: "toggle"}, "slow",()=>{
+   			console.log("now that effect is finished and callback function served we can move on")
+   		});
 });
     </script>
 </body>
