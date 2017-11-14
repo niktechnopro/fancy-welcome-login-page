@@ -9,7 +9,7 @@ body {
 
 .page-wrapper{
     height: 95vh;
-            }
+   }
 
 .form .login-form {
 	position: inherit;
@@ -28,8 +28,11 @@ body {
 
 
 img{
-	width: 200px;
+	width: 65px;
+	height: 65px;
 }
+
+
 
 .left, .right{
 	font-size: 18px;
@@ -40,7 +43,7 @@ img{
 	z-index: 5;
 	height: 300px;
 	width: 50%;
-	margin: 0 auto;
+	margin: 10% auto;
 	background: rgba(0,0,0,0.5);
 	border-radius: 10px;
 }
@@ -121,4 +124,13 @@ p{
     margin-bottom: 10px;
  }
 
-
+.header{
+	width: 100%;
+	position: fixed;
+	font-size: 25px;
+	left: 20px;
+	top: 20px;
+	color: #6c9521;
+	/*color: #4CAF50;*/
+	font-size: 31px;
+}
