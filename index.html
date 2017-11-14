@@ -20,8 +20,8 @@
     <h4>Small Descriptive Title</h4>
     <br>
     <br>
-    <div class="guest-menu">
-        <div class="col-sm-12 box-content">
+    <div class="col-sm-offset-6 guest-menu">
+        <div class="col-sm-12 box-content text-center">
 				<!-- login form -->
 			<div class="form">
 				<form class="login-form" method = "post" action = "/login">
@@ -29,7 +29,8 @@
 			      <input type="text" placeholder="name" name = "name"/>
 			      <input type="password" placeholder="password" name = "password"/>
 			      <button type = "submit">Sign In</button>
-			      <p class="col-xs-12 text-center">Not registered?<a href="#"> Create an account</a></p>
+			      <p class="left col-xs-4 message"><a href="#">Back to Guest</a></p>
+			      		<p class="right col-xs-offset-6 register"><a href="#">Login with Social Media</a></p>
 			    </form>
 			    <!-- guest form	 -->
 			    <form class="guest-form" method = "post" action="/search">
@@ -65,6 +66,7 @@
 							<br>         
                         <button id="form-group" class="form-control" type="submit">Register!</button>
                         <p class="back-to-guest col-xs-12 text-center"><a href="#"> Back to guest page</a></p>
+                        
                    
                     </div>
                 </form>
@@ -81,10 +83,11 @@
 		// to pull login page
     	$('.message a').click(function(){
     		console.log("login form will be produced")
-    	$('.guest-form').hide('slow');
-   		$('.login-form').animate({height: "toggle", opacity: "toggle"}, "slow",()=>{
-   			console.log("now that effect has finished and callback function served we can move on")
-   			});
+    	$('.guest-form').toggle(()=>{
+	   		$('.login-form').animate({height: "toggle", opacity: "toggle"}, "slow",()=>{
+	   			console.log("now that effect has finished and callback function served we can move on")
+	   			});
+	   		});
 		});
 		// to pusll registration page
 		$('.register a').click(function(){
@@ -104,6 +107,7 @@
 				console.log('welcome guest form has been served');
 			});
 		})
+
 
     </script>
  </div>
