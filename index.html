@@ -78,32 +78,53 @@
 			
 	</div>
 	<script>
-		// to pull login page
-    	$('.message a').click(function(){
-    		console.log("login form will be produced")
-    	$('.guest-form').toggle(()=>{
+		//pull login function
+		var pullLogin = () =>{
+			// $('.register-form').hide("slow");
+			$('.guest-form').toggle(()=>{
 	   		$('.login-form').animate({height: "toggle", opacity: "toggle"}, "slow",()=>{
 	   			console.log("now that effect has finished and callback function served we can move on")
 	   			});
 	   		});
-		});
-		// to pusll registration page
-		$('.register a').click(function(){
-			console.log("register form will be produced")
+		};
+
+		//pull registration page function
+		var pullRegistration = ()=>{
 			$('.guest-form').hide('slow');
 			$('.guest-menu').animate({height: "600px", top: "-150px"}, "slow")
 			$('.register-form').animate({height: "toggle", opacity: "toggle"}, "slow",()=>{
 				console.log('produce register form');
 			});
-		});
-		// back to guest page
-		$('.back-to-guest').click(()=>{
-			console.log('back to guest page');
+		};
+
+		//back to guest page
+		var toGuestPage = ()=>{
 			$('.register-form').hide("slow");
 			$('.guest-menu').animate({height: "300px", top: "0"}, "slow")
 			$('.guest-form').animate({height: "toggle", opacity: "toggle"}, "slow",()=>{
 				console.log('welcome guest form has been served');
 			});
+		}
+
+
+
+		//the following are just the listeners
+		// to pull login page
+    	$('.message a').click(()=>{
+    		pullLogin();
+    		console.log("login form will be produced")
+    	});
+		
+		// to pusll registration page
+		$('.register a').click(function(){
+			pullRegistration();
+			console.log("registration form should've been produced by now");
+		});
+		
+		// back to guest page
+		$('.back-to-guest').click(()=>{
+			toGuestPage();
+			console.log('back to guest page');
 		})
 
 
